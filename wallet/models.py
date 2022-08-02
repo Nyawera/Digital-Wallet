@@ -4,13 +4,13 @@ from django.db import models
 # Create your models here.
 
 class Customer(models.Model):
-    first_name=models.CharField(max_length=15)
-    last_name=models.CharField(max_length=19)
+    first_name=models.CharField(max_length=20,null=True)
+    last_name=models.CharField(max_length=19,null=True)
     address=models.TextField(default='') 
     email=models.EmailField()
-    phone_number=models.CharField(max_length=10)
-    gender=models.CharField(max_length=10)
-    age=models.PositiveSmallIntegerField()
+    phone_number=models.CharField(max_length=10,null=True)
+    gender=models.CharField(max_length=10,null=True)
+    age=models.PositiveSmallIntegerField(null=True)
 
 class Wallet(models.Model): 
     user_name=models.CharField(max_length=10)
